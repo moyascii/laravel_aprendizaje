@@ -14,10 +14,9 @@ use App\Http\Controllers\PortfolioController;
 */
 
 
-//Route::view('/', 'home')->name('home');
-//Route::view('/about', 'about')->name('about');
-//Route::get('/portfolio', [PortfolioController::class, 'index']);
-//Route::view('/contact', 'contact')->name('contact');
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+Route::view('/contact', 'contact')->name('contact');
 
-
-Route::resource('project', PortfolioController::class)->only(['index', 'show']);
+Route::post('contact', [\App\Http\Controllers\MessageController::class, 'store']);
