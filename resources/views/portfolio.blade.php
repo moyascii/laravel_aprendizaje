@@ -6,10 +6,12 @@
 
     <ul>
 
-        @forelse ($portfolio as $portfolioItem)
-            <li> {{ $portfolioItem['title'] }} </li>
+        @forelse ($projets as $project)
+
+            <li><a href="{{ route('portfolio.show', $project) }}"> {{ $project->title }} </a></li>
         @empty
             <li>No hay proyectos para mostrar</li>
         @endforelse
+        {{ $projets->links() }}
     </ul>
 @endsection
