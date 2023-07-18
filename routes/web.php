@@ -18,7 +18,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/portfolio', [ProjetController::class, 'index'])->name('projets.index');
-Route::get('/portfolio/{id}', [ProjetController::class, 'show'])->name('projets.show');
+Route::get('/portfolio/{project}', [ProjetController::class, 'show'])->name('projets.show');
 
 Route::view('/contact', 'contact')->name('contact');
 
