@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProjetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,8 @@ use App\Http\Controllers\PortfolioController;
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
-Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::get('/portfolio/{id}', [PortfolioController::class, 'show'])->name('portfolio.show');
+Route::get('/portfolio', [ProjetController::class, 'index'])->name('projets.index');
+Route::get('/portfolio/{id}', [ProjetController::class, 'show'])->name('projets.show');
 
 Route::view('/contact', 'contact')->name('contact');
 

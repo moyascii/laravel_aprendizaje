@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class PortfolioController extends Controller
+class ProjetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class PortfolioController extends Controller
 //        $projets = Project::latest()->paginate();
 //        return view('portfolio', compact('projets'));
 
-        return view('portfolio', [
+        return view('projets.index', [
             'projets' => Project::latest()->paginate()
         ]);
     }

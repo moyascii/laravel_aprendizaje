@@ -12,13 +12,13 @@ use Illuminate\Queue\SerializesModels;
 class MessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
-    public $message;
+    public $msg;
     /**
      * Create a new message instance.
      */
     public function __construct($message)
     {
-        $this->message = $message;
+        $this->msg = $message;
     }
 
     /**

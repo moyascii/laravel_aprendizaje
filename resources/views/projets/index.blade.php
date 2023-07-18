@@ -8,7 +8,7 @@
 
         @forelse ($projets as $project)
 
-            <li><a href="{{ route('portfolio.show', $project) }}"> {{ $project->title }} </a></li>
+            <li><a href="{{ route('projets.show', $project) }}"> {{ $project->title }} </a></li>
         @empty
             <li>No hay proyectos para mostrar</li>
         @endforelse

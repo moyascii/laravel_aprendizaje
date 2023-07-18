@@ -22,7 +22,7 @@ class MessageController extends Controller
         ]);
 
         //Enviaremos un mail
-        Mail::to('cristian.moya13@inacapmail.cl')->send(new MessageReceived($message));
+        Mail::to('cristian.moya13@inacapmail.cl')->queue(new MessageReceived($message));
 
         return 'datos validados';
     }
