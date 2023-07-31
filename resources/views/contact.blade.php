@@ -4,6 +4,7 @@
 @section('content')
     <h1>Contact</h1>
 
+    {{-- Preguntamos si hay sesión o no --}}
     <form method="POST">
         @csrf
         <input type="text" name="name" placeholder="Nombre..." value="{{ old('name') }}"> <br>

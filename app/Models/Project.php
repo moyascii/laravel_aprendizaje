@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'url', 'description'];
+//    Reemplazamos
+//    protected $fillable = ['title', 'url', 'description'];
+    //Por
+    protected $guarded = [];
     use HasFactory;
     public function getRouteKeyName()
     {

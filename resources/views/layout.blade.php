@@ -16,7 +16,7 @@
 <body>
 
 @include('partials.nav')
-
+@include('partials.status')
 @yield('content')
 
 </body>

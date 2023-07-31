@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProjetController;
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +17,26 @@ use App\Http\Controllers\ProjetController;
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
-Route::get('/portfolio', [ProjetController::class, 'index'])->name('projets.index');
-Route::get('/portfolio/crear', [ProjetController::class, 'create'])->name('projets.create');
-Route::post('/portfolio', [ProjetController::class, 'store'])->name('projets.store');
-Route::get('/portfolio/{project}', [ProjetController::class, 'show'])->name('projets.show');
+Route::resource('portfolio', ProjectController::class)
+    ->parameters(['portfolio' => 'project'])
+    ->names('projects');
+
+//Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
+//Route::get('/portfolio/crear', [ProjectController::class, 'create'])->name('projects.create');
+//
+//Route::get('/portfolio/{project}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
+////Puedo usar put o patch
+//Route::patch('/portfolio/{project}', [ProjectController::class, 'update'])->name('projects.update');
+//
+//Route::post('/portfolio', [ProjectController::class, 'store'])->name('projects.store');
+//Route::get('/portfolio/{project}', [ProjectController::class, 'show'])->name('projects.show');
+//
+//Route::delete('/portfolio/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
 Route::view('/contact', 'contact')->name('contact');
 
 Route::post('contact', [\App\Http\Controllers\MessageController::class, 'store']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
